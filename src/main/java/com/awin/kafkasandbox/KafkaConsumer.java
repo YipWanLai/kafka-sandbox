@@ -15,12 +15,11 @@ public class KafkaConsumer {
             containerFactory = "kafkaContainerFactory"
     )
     public void listen(ConsumerRecord<String, String> event) {
+        System.out.println("Received event " + event.value());
         try {
-            System.out.println("Received event " + event.value());
-            Thread.sleep(2000);
-            System.out.println("Done");
+            Thread.sleep(1000);
         } catch (Exception ex) {
-            ex.printStackTrace();
+
         }
     }
 

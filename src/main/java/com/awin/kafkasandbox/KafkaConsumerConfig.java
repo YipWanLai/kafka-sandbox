@@ -24,7 +24,7 @@ public class KafkaConsumerConfig {
         return new HashMap<String, Object>() {
             {
                 put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-                put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
+                put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
                 put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 5000);
                 put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 30000);
                 put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, 25000);
@@ -35,7 +35,7 @@ public class KafkaConsumerConfig {
                 put(ConsumerConfig.MAX_PARTITION_FETCH_BYTES_CONFIG, 10000);
 
                 put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 3000);
-                put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 2);
+                put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 1);
             }
         };
     }
